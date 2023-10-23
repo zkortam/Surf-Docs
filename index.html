@@ -1,19 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Surf Docs</title>
-  <!-- Add your CSS and JavaScript dependencies here -->
-  <link rel="stylesheet" href="__docusaurus/static/css/index.module.css">
-  <link rel="stylesheet" href="__docusaurus/static/css/custom.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://media.istockphoto.com/id/1250331164/vector/abstract-background-of-halftone-dots-and-curved-lines.jpg?s=612x612&w=0&k=20&c=5eXgpBIMfBO68f384rkjshsUgd4GoZuvZKs_w_6tbH4=');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .banner {
+            height: 1000px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner-text {
+            font-family: 'Gotham', sans-serif;
+            font-size: 40px;
+            color: white;
+            text-align: center;
+        }
+
+        .button {
+            background-color: white;
+            color: #333;
+            border: none;
+            border-radius: 100px;
+            padding: 20px 40px;
+            font-size: 20px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-  <div id="app">
-    <!-- Your Docusaurus content will be rendered here -->
-  </div>
-  <script type="text/javascript" src="https://unpkg.com/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-  <script type="text/javascript" src="__docusaurus/client.bundle.js"></script>
-  <script type="text/javascript" src="__docusaurus/legacy-bundle.js"></script>
+    <div class="banner">
+        <div class="banner-text">Surf Docs</div>
+        <div style="height: 10px;"></div>
+        <button class="button">Coming Soon</button>
+    </div>
 </body>
 </html>
