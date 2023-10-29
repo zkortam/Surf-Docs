@@ -10,15 +10,15 @@ const config = {
   favicon: 'https://static.wixstatic.com/media/a0b059_acd597ecbbd34b4d8190d5c95035e5d5~mv2.png/v1/fill/w_120,h_120,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/image%20(2).png',
 
   // Set the production url of your site here
-  url: 'https://surfsocial.org',
+  url: 'docs.surfsocial.org',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Surf', // Usually your GitHub org/user name.
-  projectName: 'Surf', // Usually your repo name.
+  organizationName: 'zkortam', // Usually your GitHub org/user name.
+  projectName: 'Surf-Docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
