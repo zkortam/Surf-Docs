@@ -1,54 +1,70 @@
-// Updated Home Page Component
+// Clean and Aesthetic Home Page for Surf Docs
 import React from 'react';
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
-import styles from './index.module.css';
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh',
+    textAlign: 'center',
+    backgroundColor: 'var(--ifm-background-color)', // Adapts to light/dark mode
+    color: 'var(--ifm-color-text-primary)',
+    padding: '1rem',
+  },
+  title: {
+    fontSize: '48px',
+    fontWeight: 'bold',
+    margin: '0 0 1rem',
+  },
+  subtitle: {
+    fontSize: '20px',
+    margin: '0 0 2rem',
+    color: 'var(--ifm-color-secondary)',
+  },
+  button: {
+    backgroundColor: 'var(--ifm-color-primary)',
+    color: 'white',
+    padding: '12px 24px',
+    fontSize: '18px',
+    border: 'none',
+    borderRadius: '8px',
+    cursor: 'pointer',
+    textDecoration: 'none',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+  },
+  buttonHover: {
+    transform: 'scale(1.05)',
+    boxShadow: '0 6px 8px rgba(0, 0, 0, 0.15)',
+  },
+};
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
 
-  const bannerBackgroundStyle = {
-    backgroundColor: 'var(--ifm-background-color)', // Adapts to light or dark mode
-    color: 'var(--ifm-color-text-primary)',
-    height: '100vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-  };
-
-  const titleTextStyle = {
-    fontSize: '40px',
-    fontWeight: 'bold',
-    marginBottom: '20px',
-  };
-
-  const buttonStyle = {
-    borderRadius: '20px',
-    fontSize: '16px',
-    padding: '10px 20px',
-    backgroundColor: '#5c6bc0',
-    color: 'white',
-    textDecoration: 'none',
-    marginTop: '20px',
-  };
-
   return (
-    <header style={bannerBackgroundStyle}>
-      <div>
-        <h1 style={titleTextStyle}>{siteConfig.title}</h1>
-        <p>{siteConfig.tagline}</p>
-        <Link
-          style={buttonStyle}
-          to="/docs/intro">
-          Get Started
-        </Link>
-      </div>
-    </header>
+    <div style={styles.container}>
+      <h1 style={styles.title}>{siteConfig.title}</h1>
+      <p style={styles.subtitle}>{siteConfig.tagline}</p>
+      <Link
+        to="/docs/intro"
+        style={styles.button}
+        onMouseEnter={(e) => {
+          e.target.style.transform = styles.buttonHover.transform;
+          e.target.style.boxShadow = styles.buttonHover.boxShadow;
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.transform = '';
+          e.target.style.boxShadow = '';
+        }}>
+        Explore Surf Docs
+      </Link>
+    </div>
   );
 }
 
@@ -57,14 +73,8 @@ export default function Home() {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Explore the power of Surf Docs">
       <HomepageHeader />
-      <main style={{ height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-        <HomepageFeatures />
-        <footer style={{ padding: '1rem', textAlign: 'center' }}>
-          &copy; {new Date().getFullYear()} {siteConfig.title}. All rights reserved.
-        </footer>
-      </main>
     </Layout>
   );
 }
