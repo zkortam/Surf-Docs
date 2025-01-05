@@ -12,7 +12,7 @@ function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
 
   const bannerBackgroundStyle = {
-    backgroundColor: 'var(--ifm-background-color)',
+    backgroundColor: 'var(--ifm-background-color)', // Adapts to light or dark mode
     color: 'var(--ifm-color-text-primary)',
     height: '100vh',
     display: 'flex',
