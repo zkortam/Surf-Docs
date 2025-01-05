@@ -1,4 +1,3 @@
-// Clean and Aesthetic Home Page for Surf Docs
 import React from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
