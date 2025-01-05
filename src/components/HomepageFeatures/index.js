@@ -1,70 +1,34 @@
-// Updated Home Page Component
 import React from 'react';
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import styles from './styles.module.css';
 
-import styles from './index.module.css';
+const FeatureList = [
+];
 
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-
-  const bannerBackgroundStyle = {
-    backgroundColor: 'var(--ifm-background-color)', // Adapts to light or dark mode
-    color: 'var(--ifm-color-text-primary)',
-    height: '100vh',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-  };
-
-  const titleTextStyle = {
-    fontSize: '40px',
-    fontWeight: 'bold',
-    marginBottom: '20px',
-  };
-
-  const buttonStyle = {
-    borderRadius: '20px',
-    fontSize: '16px',
-    padding: '10px 20px',
-    backgroundColor: '#5c6bc0',
-    color: 'white',
-    textDecoration: 'none',
-    marginTop: '20px',
-  };
-
+function Feature({Svg, title, description}) {
   return (
-    <header style={bannerBackgroundStyle}>
-      <div>
-        <h1 style={titleTextStyle}>{siteConfig.title}</h1>
-        <p>{siteConfig.tagline}</p>
-        <Link
-          style={buttonStyle}
-          to="/docs/intro">
-          Get Started
-        </Link>
+    <div className={clsx('col col--4')}>
+      <div className="text--center">
+        <Svg className={styles.featureSvg} role="img" />
       </div>
-    </header>
+      <div className="text--center padding-horiz--md">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
+    </div>
   );
 }
 
-export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+export default function HomepageFeatures() {
   return (
-    <Layout
-      title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main style={{ height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-        <HomepageFeatures />
-        <footer style={{ padding: '1rem', textAlign: 'center' }}>
-          &copy; {new Date().getFullYear()} {siteConfig.title}. All rights reserved.
-        </footer>
-      </main>
-    </Layout>
+    <section className={styles.features}>
+      <div className="container">
+        <div className="row">
+          {FeatureList.map((props, idx) => (
+            <Feature key={idx} {...props} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
