@@ -12,12 +12,9 @@ function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
 
   const bannerBackgroundStyle = {
-    backgroundImage: `url('https://4kwallpapers.com/images/walls/thumbs_2t/11090.jpg')`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    color: 'white',
-    height: '600px',
+    backgroundColor: 'var(--ifm-background-color)', // Adapts to light or dark mode
+    color: 'var(--ifm-color-text-primary)',
+    height: '100vh',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -25,15 +22,15 @@ function HomepageHeader() {
   };
 
   const titleTextStyle = {
-    fontSize: '50px',
+    fontSize: '40px',
     fontWeight: 'bold',
     marginBottom: '20px',
   };
 
   const buttonStyle = {
-    borderRadius: '25px',
-    fontSize: '18px',
-    padding: '10px 30px',
+    borderRadius: '20px',
+    fontSize: '16px',
+    padding: '10px 20px',
     backgroundColor: '#5c6bc0',
     color: 'white',
     textDecoration: 'none',
@@ -62,8 +59,11 @@ export default function Home() {
       title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
-      <main>
+      <main style={{ height: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
         <HomepageFeatures />
+        <footer style={{ padding: '1rem', textAlign: 'center' }}>
+          &copy; {new Date().getFullYear()} {siteConfig.title}. All rights reserved.
+        </footer>
       </main>
     </Layout>
   );
