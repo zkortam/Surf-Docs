@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types'; // For prop validation
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 
+// Define styles as constants
 const styles = {
   container: {
     display: 'flex',
@@ -43,37 +45,57 @@ const styles = {
   },
 };
 
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
+// Define a reusable Button component
+function AnimatedButton({ to, children }) {
+  const handleMouseEnter = (e) => {
+    e.target.style.transform = styles.buttonHover.transform;
+    e.target.style.boxShadow = styles.buttonHover.boxShadow;
+  };
 
+  const handleMouseLeave = (e) => {
+    e.target.style.transform = '';
+    e.target.style.boxShadow = '';
+  };
+
+  return (
+    <Link
+      to={to}
+      style={styles.button}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}>
+      {children}
+    </Link>
+  );
+}
+
+// Validate AnimatedButton props
+AnimatedButton.propTypes = {
+  to: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
+function HomepageHeader({ siteConfig }) {
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>{siteConfig.title}</h1>
       <p style={styles.subtitle}>{siteConfig.tagline}</p>
-      <Link
-        to="/docs/intro"
-        style={styles.button}
-        onMouseEnter={(e) => {
-          e.target.style.transform = styles.buttonHover.transform;
-          e.target.style.boxShadow = styles.buttonHover.boxShadow;
-        }}
-        onMouseLeave={(e) => {
-          e.target.style.transform = '';
-          e.target.style.boxShadow = '';
-        }}>
-        Explore Surf Docs
-      </Link>
+      <AnimatedButton to="/docs/intro">Explore Surf Docs</AnimatedButton>
     </div>
   );
 }
 
+HomepageHeader.propTypes = {
+  siteConfig: PropTypes.object.isRequired,
+};
+
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+
   return (
     <Layout
       title={`${siteConfig.title}`}
       description="Explore the power of Surf Docs">
-      <HomepageHeader />
+      <HomepageHeader siteConfig={siteConfig} />
     </Layout>
   );
 }
