@@ -10,7 +10,7 @@ const config = {
   favicon: 'https://static.wixstatic.com/media/a0b059_acd597ecbbd34b4d8190d5c95035e5d5~mv2.png/v1/fill/w_120,h_120,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/image%20(2).png',
 
   // Set the production url of your site here
-  url: 'docs.surfsocial.org',
+  url: 'https://docs.surfsocial.org',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
