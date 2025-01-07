@@ -12,20 +12,16 @@ const config = {
   // Set the production url of your site here
   url: 'https://docs.surfsocial.org',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'zkortam', // Usually your GitHub org/user name.
-  projectName: 'Surf-Docs', // Usually your repo name.
+  organizationName: 'zkortam', // Your GitHub org/user name
+  projectName: 'Surf-Docs', // Your repo name
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -38,17 +34,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/zkortam/Surf-Docs/edit/main/', // Your repo's edit link
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/zkortam/Surf-Docs/edit/main/', // Your repo's edit link
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -60,24 +50,23 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/docusaurus-social-card.jpg', // Replace with your social card image if available
       navbar: {
         title: 'Surf',
         logo: {
-          alt: 'Surf',
+          alt: 'Surf Logo',
           src: 'https://static.wixstatic.com/media/a0b059_acd597ecbbd34b4d8190d5c95035e5d5~mv2.png/v1/fill/w_120,h_120,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/image%20(2).png',
         },
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'tutorialSidebar', // Ensure this matches the sidebars.js configuration
             position: 'left',
             label: 'Docs',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://surfllc.org',
+            href: 'https://surfsocial.org',
             label: 'To Surf',
             position: 'right',
           },
@@ -107,7 +96,7 @@ const config = {
                 href: 'https://www.instagram.com/surfmain/?hl=en',
               },
               {
-                label: 'X',
+                label: 'Twitter',
                 href: 'https://twitter.com/SurfMain',
               },
             ],
@@ -117,11 +106,11 @@ const config = {
             items: [
               {
                 label: 'Main Website',
-                to: '/blog',
+                href: 'https://surfsocial.org',
               },
               {
                 label: 'Surf App',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/zkortam/Surf-App', // Replace with your Surf App repo
               },
             ],
           },
@@ -134,10 +123,9 @@ const config = {
       },
     }),
 
-  // Add this custom CSS to apply a background image to the banner
   stylesheets: [
     {
-      href: '/path/to/your/background.css', // Replace with the actual path to your background CSS file
+      href: '/css/background.css', // Ensure this matches the actual file path
       type: 'text/css',
     },
   ],
